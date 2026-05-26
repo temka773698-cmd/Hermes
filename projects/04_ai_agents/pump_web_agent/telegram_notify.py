@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import urllib.error
 import urllib.request
 from typing import Any
 
@@ -26,5 +27,14 @@ def send_telegram_message(bot_token: str, chat_id: str, text: str) -> dict[str, 
         headers={"Content-Type": "application/json"},
         method="POST",
     )
-    with urllib.request.urlopen(req, timeout=15) as response:
-        return json.loads(response.read().decode("utf-8"))
+    try:
+        with urllib.request.urlopen(req, timeout=15) as response:
+            return json.loads(response.read().decode("utf-8"))
+    except urllib.error.HTTPError as exc:
+        body = exc.read().decode("utf-8", errors="replace")
+        try:
+            details = json.loads(body)
+        except json.JSONDecodeError:
+            details = {"description": body}
+        description = details.get("description", "")
+        raise RuntimeError(f"Telegram API error {exc.code}: {description}") from exc

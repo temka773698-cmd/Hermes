@@ -9,6 +9,18 @@ function addMessage(role, text) {
   item.textContent = text;
   messages.appendChild(item);
   messages.scrollTop = messages.scrollHeight;
+  return item;
+}
+
+function wait(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+function typingDelayFor(text) {
+  const baseDelay = 550;
+  const perCharDelay = 12;
+  const maxDelay = 1600;
+  return Math.min(maxDelay, baseDelay + String(text || '').length * perCharDelay);
 }
 
 async function sendMessage(text = '') {
@@ -25,6 +37,10 @@ async function sendMessage(text = '') {
   const data = await response.json();
   sessionId = data.session_id;
   localStorage.setItem('pump_agent_session_id', sessionId);
+
+  const typing = addMessage('bot typing', 'печатает…');
+  await wait(typingDelayFor(data.reply));
+  typing.remove();
   addMessage('bot', data.reply || 'Нет ответа');
 }
 

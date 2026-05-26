@@ -79,7 +79,17 @@ def main() -> None:
     write_env(values)
     print(f"\n.env сохранён: {ENV_PATH}")
 
-    result = send_telegram_message(token, chat_id, "✅ Pump Web Agent подключён. Тестовая заявка будет приходить сюда.")
+    try:
+        result = send_telegram_message(token, chat_id, "✅ Pump Web Agent подключён. Тестовая заявка будет приходить сюда.")
+    except RuntimeError as exc:
+        print("\n.env сохранён, но тестовое сообщение не отправилось.")
+        print(str(exc))
+        print("\nЧто проверить:")
+        print("1. В группе AI Насосы бот @nasospodbor_bot не должен быть удалён или заблокирован.")
+        print("2. У бота должно быть право отправлять сообщения в группе.")
+        print("3. Если сомневаешься — сделай бота администратором группы и запусти скрипт ещё раз.")
+        raise SystemExit(1)
+
     print("Тестовое сообщение отправлено:")
     print(json.dumps(result, ensure_ascii=False, indent=2))
 

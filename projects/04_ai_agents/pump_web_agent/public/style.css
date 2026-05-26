@@ -81,6 +81,12 @@ h1 { margin: 0; font-size: clamp(32px, 6vw, 56px); line-height: 1; }
   border-bottom-left-radius: 6px;
 }
 
+.message.typing {
+  color: #64748b;
+  font-style: italic;
+  opacity: .85;
+}
+
 .message.user {
   align-self: flex-end;
   background: #2563eb;
