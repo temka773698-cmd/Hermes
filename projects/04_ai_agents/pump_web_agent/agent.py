@@ -63,7 +63,12 @@ class PumpQualifier:
                 and facts.get("drainage_depth")
             )
         if facts.get("task") == "Повышение давления":
-            return bool(facts.get("contact") and facts.get("scope") and facts.get("people") and facts.get("bathrooms"))
+            return bool(
+                facts.get("contact")
+                and facts.get("scope")
+                and (facts.get("people") or facts.get("object_type") or facts.get("usage_points"))
+                and facts.get("bathrooms")
+            )
         return bool(facts.get("contact") and facts.get("water_treatment")) and len(self.state.messages) >= 6
 
     def _add(self, role: str, content: str) -> None:
@@ -117,19 +122,48 @@ class PumpQualifier:
         elif "участ" in low or "двор" in low or "канава" in low:
             facts["drainage_place"] = "Участок/улица"
 
-        if "ливн" in low or "лявн" in low or "дожд" in low:
-            facts["drainage_water"] = "Дождевая/ливневая вода"
-        elif "гряз" in low:
-            facts["drainage_water"] = "Грязная вода"
-        elif "чист" in low:
-            facts["drainage_water"] = "Чистая вода"
+        if facts.get("task") == "Дренажный насос":
+            if "ливн" in low or "лявн" in low or "дожд" in low:
+                facts["drainage_water"] = "Дождевая/ливневая вода"
+            elif "гряз" in low:
+                facts["drainage_water"] = "Грязная вода"
+            elif "чист" in low:
+                facts["drainage_water"] = "Чистая вода"
 
-        drainage_depth = re.search(r"(?:глубин|яма|приям|уровень)\D{0,15}(\d{1,3})\s*(?:м|метр|см)?", low)
-        if drainage_depth:
-            facts["drainage_depth"] = drainage_depth.group(1)
+        if facts.get("task") == "Дренажный насос":
+            drainage_depth = re.search(r"(?:глубин|яма|приям|уровень)\D{0,15}(\d{1,3})\s*(?:м|метр|см)?", low)
+            if drainage_depth:
+                facts["drainage_depth"] = drainage_depth.group(1)
 
         if "водоочист" in low or "водоподготов" in low or "анализ воды" in low or "анализ" in low:
-            facts["water_treatment"] = "Нужен вопрос по анализу/водоочистке"
+            treatment_needed = bool(re.search(r"(?:водоочист\w*|водоподготов\w*|фильтр\w*)\D{0,20}(?:нуж|над|да|есть)", low))
+            treatment_not_needed = bool(re.search(r"(?:водоочист\w*|водоподготов\w*|фильтр\w*)\D{0,20}(?:не\s+нуж|нет|без)", low))
+            analysis_exists = bool(re.search(r"анализ\w*(?:\s+воды)?\D{0,20}(?:есть|имеется|да)", low))
+            analysis_missing = bool(re.search(r"анализ\w*(?:\s+воды)?\D{0,20}(?:нет|не\s+делал|не\s+сдавал|отсутств)", low))
+
+            if treatment_not_needed or analysis_missing:
+                if analysis_missing:
+                    facts["water_treatment"] = "Не нужна, анализа нет"
+                else:
+                    facts["water_treatment"] = "Не нужна"
+            elif treatment_needed or analysis_exists:
+                if analysis_exists:
+                    facts["water_treatment"] = "Нужна, анализ есть"
+                else:
+                    facts["water_treatment"] = "Нужна"
+            else:
+                facts["water_treatment"] = "Ответ по водоочистке получен"
+
+        if "дом" in low or "дач" in low or "бан" in low:
+            facts["object_type"] = "Дом/дача" if "бан" not in low else "Баня"
+        if "полив" in low:
+            facts["usage_points"] = "Полив"
+        if "всего дом" in low or "весь дом" in low:
+            facts["usage_points"] = "Весь дом"
+
+        range_points = re.fullmatch(r"(\d{1,2})\s*[-–—]\s*(\d{1,2})", normalized)
+        if range_points:
+            facts["bathrooms"] = f"{range_points.group(1)}-{range_points.group(2)}"
 
         number_words = {
             "один": "1", "одна": "1", "два": "2", "две": "2", "три": "3", "четыре": "4",
@@ -168,6 +202,11 @@ class PumpQualifier:
             facts["casing_diameter_mm"] = diameter.group(1)
 
         if facts.get("task") == "Скважинный насос":
+            level_before_word = re.search(r"(\d{1,3})\s*(?:уров\w*|уроы\w*)", low)
+            level_after_word = re.search(r"(?:уров\w*|уроы\w*)\s*(?:воды\s*)?(\d{1,3})", low)
+            if level_before_word or level_after_word:
+                facts["water_level_m"] = (level_before_word or level_after_word).group(1)
+
             if "зеркало" in low:
                 mirror_before_word = re.search(r"(\d{1,3})\s*зеркал\w*", low)
                 mirror_after_word = re.search(r"зеркало\s*(?:на\s*)?(\d{1,3})", low)
@@ -179,7 +218,9 @@ class PumpQualifier:
                 facts["water_level_m"] = natural_water_level.group(1)
 
             if "глуб" in low:
-                depth = re.search(r"глуб\w*\D{0,15}(\d{1,3})", low)
+                depth_before_word = re.search(r"(\d{1,3})\s*глуб\w*", low)
+                depth_after_word = re.search(r"глуб\w*\s*(?:скважины\s*)?(\d{1,3})", low)
+                depth = depth_before_word or depth_after_word
                 if depth:
                     facts["well_depth_m"] = depth.group(1)
             natural_well_depth = re.search(r"скважин\w*\D{0,15}(\d{1,3})\s*(?:м|метр)", low)
@@ -239,8 +280,11 @@ class PumpQualifier:
         if not facts.get("scope"):
             return "Для повышения давления нужна насосная станция/насос с автоматикой или уже есть часть оборудования?"
 
-        if not facts.get("people") or not facts.get("bathrooms"):
+        if not (facts.get("people") or facts.get("object_type") or facts.get("usage_points")):
             return "Для какого объекта повышаем давление: баня/дом/дача? Сколько точек водоразбора будет работать: душ, кран, туалет, полив?"
+
+        if not facts.get("bathrooms"):
+            return "Понял задачу. Сколько примерно точек водоразбора будет работать: душ, кран, туалет, полив? Можно диапазоном, например 3-5."
 
         if not facts.get("distance_m"):
             return "Уточните, пожалуйста: где будет стоять станция и примерно какое расстояние до точек водоразбора?"
@@ -287,6 +331,8 @@ def extract_lead_summary(state: DialogState) -> str:
         ("contact", "Контакт"),
         ("task", "Задача"),
         ("scope", "Объём поставки"),
+        ("object_type", "Объект"),
+        ("usage_points", "Назначение/точки"),
         ("water_treatment", "Водоочистка/анализ воды"),
         ("drainage_place", "Место откачки"),
         ("drainage_water", "Тип воды для откачки"),

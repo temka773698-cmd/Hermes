@@ -38,6 +38,37 @@ def test_agent_does_not_require_budget_urgency_or_pressure():
     assert all(word not in combined for word in forbidden)
 
 
+def test_well_understands_numbers_before_depth_level_diameter_labels():
+    agent = PumpQualifier()
+    agent.start()
+    agent.reply("скважина")
+    agent.reply("комплект")
+    agent.reply("50 глубина 20 уровень 125 диаметр")
+    assert agent.state.facts["well_depth_m"] == "50"
+    assert agent.state.facts["water_level_m"] == "20"
+    assert agent.state.facts["casing_diameter_mm"] == "125"
+
+
+def test_well_understands_level_typo_before_diameter_label():
+    agent = PumpQualifier()
+    agent.start()
+    agent.reply("скважина")
+    agent.reply("комплект")
+    agent.reply("50 глубина 20 уроыень 125 диаметр")
+    assert agent.state.facts["well_depth_m"] == "50"
+    assert agent.state.facts["water_level_m"] == "20"
+    assert agent.state.facts["casing_diameter_mm"] == "125"
+
+
+def test_well_level_does_not_create_drainage_depth():
+    agent = PumpQualifier()
+    agent.start()
+    agent.reply("скважина")
+    agent.reply("комплект")
+    agent.reply("50 глубина 20 уровень 125 диаметр")
+    assert "drainage_depth" not in agent.state.facts
+
+
 def test_well_mirror_after_word_not_overwritten_by_depth():
     agent = PumpQualifier()
     agent.start()
@@ -117,6 +148,33 @@ def test_distance_question_understands_one_two_three_phases_with_spaces():
         agent.reply("5 человек 4 точки")
         agent.reply(message)
         assert agent.state.facts["power_phase"] == expected
+
+
+def test_pressure_boost_understands_object_usage_words_and_point_range():
+    agent = PumpQualifier()
+    agent.start()
+    agent.reply("повысить давление в центральной воде")
+    agent.reply("насосная станция")
+
+    reply = agent.reply("дом на полив")
+    assert agent.state.facts["object_type"] == "Дом/дача"
+    assert agent.state.facts["usage_points"] == "Полив"
+    assert "точек" in reply.lower()
+
+    reply = agent.reply("3 -5")
+    assert agent.state.facts["bathrooms"] == "3-5"
+    assert "расстояние" in reply.lower()
+
+
+def test_pressure_boost_accepts_whole_house_as_usage_context():
+    agent = PumpQualifier()
+    agent.start()
+    agent.reply("центральное водоснабжение")
+    agent.reply("насосная станция")
+    reply = agent.reply("для всего дома")
+    assert agent.state.facts["object_type"] == "Дом/дача"
+    assert agent.state.facts["usage_points"] == "Весь дом"
+    assert "точек" in reply.lower()
 
 
 def test_pressure_boost_flow_understands_central_water_and_pump_station():
@@ -316,6 +374,37 @@ def test_agent_does_not_handoff_before_water_treatment_answer():
         reply = agent.reply(message)
     assert agent.is_ready_for_handoff() is False
     assert "водоочист" in reply.lower() or "анализ воды" in reply.lower()
+
+
+def test_agent_understands_negative_water_treatment_answer_without_drainage_pollution():
+    agent = PumpQualifier()
+    agent.start()
+    for message in [
+        "Здравствуйте, нужен насос для скважины на дачу",
+        "Нужен полный комплект с автоматикой и баком",
+        "Скважина глубина 45 метров, зеркало воды 18 метров, диаметр трубы 110",
+        "Дом 4 человека, 2 санузла, кухня, душ",
+        "Расстояние до дома 20 метров",
+    ]:
+        agent.reply(message)
+
+    reply = agent.reply("Водоочистка не нужна, анализа нет")
+
+    assert agent.state.facts["water_treatment"] == "Не нужна, анализа нет"
+    assert "drainage_water" not in agent.state.facts
+    assert "контакт" in reply.lower()
+
+
+def test_agent_understands_positive_water_treatment_answer():
+    agent = PumpQualifier()
+    agent.start()
+    agent.reply("скважина глубина 50 зеркало 30 диаметр 110")
+    agent.reply("полный комплект")
+    agent.reply("дом 4 человека, 2 санузла")
+    agent.reply("расстояние 20 метров")
+    agent.reply("Да, нужна водоочистка, анализ воды есть")
+
+    assert agent.state.facts["water_treatment"] == "Нужна, анализ есть"
 
 
 def test_agent_creates_lead_when_contact_received():
