@@ -1,0 +1,4 @@
+1. Upload the contents of this folder to the site root on REG.RU.
+2. Copy api/config.php.example to api/config.php and fill in real Telegram credentials.
+3. Keep data/ writable by PHP.
+4. Do NOT upload local .env, tests/, __pycache__/, or local logs.

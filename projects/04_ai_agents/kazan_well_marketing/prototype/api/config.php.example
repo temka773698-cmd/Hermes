@@ -1,0 +1,7 @@
+<?php
+
+return [
+    'site_name' => 'АкваСтрой',
+    'telegram_bot_token' => '1234567890:replace_me',
+    'telegram_chat_id' => 'replace_me',
+];

@@ -1,0 +1,17 @@
+аквастрой-казань.рф, www.аквастрой-казань.рф {
+    root * /var/www/akvastroy
+    encode zstd gzip
+    file_server
+
+    @html {
+        path *.html
+    }
+    header @html Cache-Control "public, max-age=300"
+
+    @assets {
+        path *.css *.js *.svg *.png *.jpg *.jpeg *.webp *.ico *.xml *.txt
+    }
+    header @assets Cache-Control "public, max-age=86400"
+
+    try_files {path} {path}/ /index.html
+}
