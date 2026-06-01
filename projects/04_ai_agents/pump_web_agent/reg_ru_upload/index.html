@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>АкваСтрой — подбор насоса и сбор заявки</title>
+  <meta name="description" content="Онлайн-помощник АкваСтрой: собирает данные по скважине, дренажу и насосному оборудованию и передаёт заявку менеджеру." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="hero">
+      <div>
+        <p class="badge">АкваСтрой</p>
+        <h1>Подбор насоса: быстрый сбор заявки</h1>
+        <p class="subtitle">Онлайн-помощник уточнит несколько вопросов и передаст готовую заявку менеджеру.</p>
+      </div>
+      <div class="notice">Не финальный инженерный подбор. Менеджер проверит данные и свяжется с клиентом.</div>
+    </section>
+
+    <section class="chat-card">
+      <div id="messages" class="messages"></div>
+      <form id="chat-form" class="chat-form">
+        <input id="message-input" autocomplete="off" placeholder="Например: нужен насос для скважины 50 метров" />
+        <button type="submit">Отправить</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

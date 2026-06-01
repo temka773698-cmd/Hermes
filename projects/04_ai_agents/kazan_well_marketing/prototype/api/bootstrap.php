@@ -158,6 +158,48 @@ function lead_send_to_telegram($botToken, $chatId, $text)
         '&'
     );
 
+    if (function_exists('curl_init')) {
+        $ch = curl_init($url);
+        curl_setopt_array($ch, array(
+            CURLOPT_POST => true,
+            CURLOPT_POSTFIELDS => $body,
+            CURLOPT_RETURNTRANSFER => true,
+            CURLOPT_CONNECTTIMEOUT => 10,
+            CURLOPT_TIMEOUT => 20,
+            CURLOPT_HTTPHEADER => array('Content-Type: application/x-www-form-urlencoded'),
+        ));
+        $responseBody = curl_exec($ch);
+        $statusCode = (int) curl_getinfo($ch, CURLINFO_RESPONSE_CODE);
+        if ($responseBody === false) {
+            $curlError = curl_error($ch);
+            curl_close($ch);
+            return array(false, array(
+                'kind' => 'telegram_transport_error',
+                'message' => 'Ошибка cURL при обращении к Telegram: ' . ($curlError !== '' ? $curlError : 'без описания'),
+                'status_code' => $statusCode ?: null,
+                'telegram_description' => '',
+                'response_body' => false,
+                'hint' => 'Проверьте, может ли хостинг выполнять исходящие HTTPS-запросы и поддерживает ли cURL.',
+            ));
+        }
+        curl_close($ch);
+
+        $decoded = json_decode($responseBody, true);
+        if (($statusCode >= 200 && $statusCode < 300) && is_array($decoded) && !empty($decoded['ok'])) {
+            return array(true, $decoded);
+        }
+
+        $description = is_array($decoded) && isset($decoded['description']) ? (string) $decoded['description'] : '';
+        return array(false, array(
+            'kind' => 'telegram_api_error',
+            'message' => 'Telegram API отклонил сообщение: ' . ($description !== '' ? $description : 'без описания'),
+            'status_code' => $statusCode ?: null,
+            'telegram_description' => $description,
+            'response_body' => $decoded !== null ? $decoded : $responseBody,
+            'hint' => lead_telegram_hint($statusCode ?: null, $description),
+        ));
+    }
+
     $context = stream_context_create(array(
         'http' => array(
             'method' => 'POST',
