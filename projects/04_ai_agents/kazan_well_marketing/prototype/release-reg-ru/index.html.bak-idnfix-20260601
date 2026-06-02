@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>АкваСтрой — скважины, вода и инженерные системы для дома в Казани</title>
+  <meta name="description" content="АкваСтрой: бурение скважин, обустройство, водоподготовка, насосы, автополив и отопление для частных домов, дач и участков в Казани и пригороде." />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon-180x180.png" />
+  <link rel="stylesheet" href="./style.css" />
+  <link rel="canonical" href="https://xn----7sbabai2bnge0bfznp3o.xn--p1ai/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="АкваСтрой — скважины, вода и инженерные системы для дома в Казани" />
+  <meta property="og:description" content="АкваСтрой: бурение скважин, обустройство, водоподготовка, насосы, автополив и отопление для частных домов, дач и участков в Казани и пригороде." />
+  <meta property="og:url" content="https://xn----7sbabai2bnge0bfznp3o.xn--p1ai/" />
+  <meta name="robots" content="index, follow, max-image-preview:large" />
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"АкваСтрой","url":"https://xn----7sbabai2bnge0bfznp3o.xn--p1ai","telephone":"+78432583938","address":{"@type":"PostalAddress","streetAddress":"Казань, ул. Габдуллы Тукая, 115, корп. 1","addressLocality":"Казань","addressRegion":"Республика Татарстан","postalCode":"420021","addressCountry":"RU"},"areaServed":["Казань","Казанская агломерация","Пригород Казани"],"description":"Скважины, вода и инженерные системы для частных домов, дач и участков в Казани и пригороде.","sameAs":["https://yandex.ru/profile/1231507444?lang=ru","https://xn----7sbabai2bnge0bfznp3o.xn--p1ai"],"makesOffer":[{"@type":"Offer","itemOffered":{"@type":"Service","name":"Бурение скважин"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Обустройство скважины"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Водоподготовка"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Насосное оборудование"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Ремонт насосов"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Автополив"}},{"@type":"Offer","itemOffered":{"@type":"Service","name":"Отопление"}}],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.8","reviewCount":"115","bestRating":"5"}}</script>
+  <!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+  (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+  })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=109494932', 'ym');
+
+  ym(109494932, 'init', {
+    ssr:true,
+    webvisor:true,
+    clickmap:true,
+    ecommerce:'dataLayer',
+    referrer: document.referrer,
+    url: location.href,
+    accurateTrackBounce:true,
+    trackLinks:true
+  });
+</script>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+  <noscript><div><img src="https://mc.yandex.ru/watch/109494932" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <header class="site-header">
+    <div class="container header-row">
+      <a class="brand-link" href="index.html">
+        <div class="brand-title">АкваСтрой</div>
+        <div class="brand-subtitle">Системы воды и инженерные решения для дома</div>
+      </a>
+      <button class="menu-toggle" aria-label="Открыть меню">☰</button>
+      <nav class="nav">
+        <a class="nav-link active" href="index.html">Главная</a>
+        <a class="nav-link" href="burenie-skvazhin.html">Бурение</a>
+        <a class="nav-link" href="skvazhina-pod-klyuch.html">Под ключ</a>
+        <a class="nav-link" href="obustroystvo-skvazhin.html">Обустройство</a>
+        <a class="nav-link" href="vodopodgotovka.html">Водоподготовка</a>
+        <a class="nav-link" href="nasosnoe-oborudovanie.html">Насосы</a>
+        <a class="nav-link" href="remont-nasosov.html">Ремонт насосов</a>
+        <a class="nav-link" href="avtopoliv.html">Автополив</a>
+        <a class="nav-link" href="otoplenie.html">Отопление</a>
+      </nav>
+      <a class="phone-link" href="tel:+78432583938">+7 (843) 258-39-38</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero home-hero">
+      <div class="container hero-grid home-hero-grid">
+        <div class="hero-copy hero-copy-premium">
+          <span class="eyebrow">АкваСтрой · Казань и пригород</span>
+          <h1>Скважина, вода и инженерные системы для частного дома — <span class="hero-highlight">без лишней путаницы</span></h1>
+          <p class="hero-text">Помогаем быстро понять, какой следующий шаг нужен по вашему объекту: новая скважина, обустройство, насос, очистка воды, автополив или отопление.</p>
+
+          <div class="home-hero-points home-hero-points-compact">
+            <div class="home-hero-point">
+              <strong>Один понятный контур для дома</strong>
+              <span>Скважина, вода, насосы, автоматика, участок и отопление связаны в одну логику.</span>
+            </div>
+            <div class="home-hero-point">
+              <strong>Без лишних обещаний</strong>
+              <span>Сначала разбираемся в задаче, потом предлагаем конкретный следующий шаг.</span>
+            </div>
+          </div>
+
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#lead-form">Получить консультацию</a>
+            <a class="btn btn-secondary" href="#services-router">Выбрать направление</a>
+          </div>
+
+          <div class="hero-trust-row hero-metrics-row">
+            <div class="hero-trust-item hero-metric-item">
+              <em>6</em>
+              <strong>направлений</strong>
+              <span>От бурения до отопления в одном маршруте.</span>
+            </div>
+            <div class="hero-trust-item hero-metric-item">
+              <em>1</em>
+              <strong>заявка</strong>
+              <span>Можно начать с общей консультации и уже потом сузить задачу.</span>
+            </div>
+            <div class="hero-trust-item hero-metric-item">
+              <em>Локально</em>
+              <strong>Казань и пригород</strong>
+              <span>Под частные дома, дачи и участки рядом с городом.</span>
+            </div>
+          </div>
+
+          <p class="hero-note">Если вы ещё не уверены в направлении, оставьте одну общую заявку — начнём с консультации и поможем определить сценарий.</p>
+        </div>
+
+        <div class="hero-card home-hero-side">
+          <div class="mini-card home-intent-card home-intent-card-compact">
+            <div class="mini-card-title">Быстрый вход по задаче</div>
+            <div class="intent-chip-list intent-chip-list-compact">
+              <a class="intent-chip" href="burenie-skvazhin.html">Нужна скважина</a>
+              <a class="intent-chip" href="obustroystvo-skvazhin.html">Есть скважина</a>
+              <a class="intent-chip" href="vodopodgotovka.html">Проблемы с водой</a>
+              <a class="intent-chip" href="#lead-form">Нужна консультация</a>
+            </div>
+          </div>
+
+          <div class="hero-system-card" aria-hidden="true">
+            <div class="hero-system-head">
+              <strong>Как собирается система</strong>
+              <span>Источник → вода в доме → инженерный контур</span>
+            </div>
+            <div class="hero-system-line">
+              <div class="system-node">
+                <b></b>
+                <span>Скважина</span>
+              </div>
+              <div class="system-node">
+                <b></b>
+                <span>Вода и насос</span>
+              </div>
+              <div class="system-node">
+                <b></b>
+                <span>Дом и участок</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="lead-form">
+            <form class="lead-card js-lead-form home-lead-card">
+              <h2>Быстрая консультация</h2>
+              <p class="home-form-lead">Оставьте контакт и коротко опишите задачу — так проще быстро понять следующий шаг по вашему объекту.</p>
+              <label><span>Имя</span><input name="name" type="text" placeholder="Как к вам обращаться" required /></label>
+              <label><span>Телефон</span><input name="phone" type="tel" placeholder="+7 (___) ___-__-__" required /></label>
+              <label><span>Населённый пункт</span><input name="location" type="text" placeholder="Например, Казань, Куюки, Пестрецы" /></label>
+              <label>
+                <span>Что нужно</span>
+                <select name="need">
+                  <option>Нужна консультация по объекту</option>
+                  <option>Бурение скважины</option>
+                  <option>Скважина под ключ</option>
+                  <option>Обустройство скважины</option>
+                  <option>Водоподготовка</option>
+                  <option>Насосное оборудование</option>
+                  <option>Ремонт насосов</option>
+                  <option>Автополив</option>
+                  <option>Отопление</option>
+                </select>
+              </label>
+              <label><span>Комментарий</span><textarea name="comment" rows="4" placeholder="Например: есть участок, нужна вода в доме / насос слабо качает / хотим отопление для дома 120 м²"></textarea></label>
+              <button class="btn btn-primary" type="submit">Получить консультацию</button>
+              <p class="form-note">После отправки вы увидите статус заявки и её ID. Сообщение уходит в Telegram, а копия сохраняется в резервный лог.</p>
+              <pre class="form-output" hidden></pre>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section home-summary-section">
+      <div class="container">
+        <div class="home-summary-box">
+          <div>
+            <span class="eyebrow">Почему АкваСтрой</span>
+            <h2>АкваСтрой — не «куча несвязанных услуг», а один понятный контур для воды и инженерных систем дома</h2>
+          </div>
+          <p>Мы помогаем владельцам домов, дач и участков не блуждать между разными подрядчиками и решениями. Ниже можно быстро выбрать нужное направление: новая скважина, обустройство, качество воды, насосы, автополив или отопление.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="services-router">
+      <div class="container">
+        <div class="section-head home-centered-head">
+          <span class="eyebrow">Быстрый выбор направления</span>
+          <h2>С чем к нам чаще всего обращаются</h2>
+          <p>Если вы пришли с рекламы, поиска или рекомендации, здесь можно быстро перейти на нужную страницу без лишнего блуждания по сайту.</p>
+        </div>
+
+        <div class="cards-grid cards-grid-3 home-router-grid">
+          <article class="service-card home-router-card home-router-card-dark">
+            <span class="router-badge">С нуля</span>
+            <h3>Нужна новая скважина</h3>
+            <p>Для участка, дачи или дома, когда ещё нет своего источника воды и нужно понять, какой вариант подойдёт дальше.</p>
+            <ul class="service-mini-list">
+              <li>Бурение</li>
+              <li>Скважина под ключ</li>
+              <li>Первичный расчёт стоимости</li>
+            </ul>
+            <a href="burenie-skvazhin.html">Перейти к бурению</a>
+          </article>
+
+          <article class="service-card home-router-card">
+            <span class="router-badge">Есть скважина</span>
+            <h3>Нужно обустроить и подать воду в дом</h3>
+            <p>Когда скважина уже есть, но нужно превратить её в рабочую систему: насос, автоматика, адаптер, кессон, ввод в дом.</p>
+            <ul class="service-mini-list">
+              <li>Обустройство</li>
+              <li>Насосы</li>
+              <li>Автоматика и схема</li>
+            </ul>
+            <a href="obustroystvo-skvazhin.html">Перейти к обустройству</a>
+          </article>
+
+          <article class="service-card home-router-card">
+            <span class="router-badge">Проблема с водой</span>
+            <h3>Нужно разобраться с качеством воды</h3>
+            <p>Когда вода пахнет, мутнеет, оставляет налёт или нужно понять, нужна ли фильтрация именно в вашем случае.</p>
+            <ul class="service-mini-list">
+              <li>Водоподготовка</li>
+              <li>Подбор фильтрации</li>
+              <li>Для дома, дачи и коттеджа</li>
+            </ul>
+            <a href="vodopodgotovka.html">Перейти к водоподготовке</a>
+          </article>
+
+          <article class="service-card home-router-card">
+            <span class="router-badge">Оборудование</span>
+            <h3>Нужен насос или ремонт насоса</h3>
+            <p>Когда нужно подобрать насос под задачу или понять, почему существующая система работает нестабильно.</p>
+            <ul class="service-mini-list">
+              <li>Подбор насоса</li>
+              <li>Диагностика</li>
+              <li>Ремонт насосов</li>
+            </ul>
+            <a href="nasosnoe-oborudovanie.html">Перейти к насосам</a>
+          </article>
+
+          <article class="service-card home-router-card">
+            <span class="router-badge">Участок</span>
+            <h3>Нужен автополив</h3>
+            <p>Когда хочется, чтобы участок, газон или сад поливались стабильно без постоянной ручной возни со шлангами.</p>
+            <ul class="service-mini-list">
+              <li>Для дома и дачи</li>
+              <li>Под участки разного размера</li>
+              <li>С понятной логикой обслуживания</li>
+            </ul>
+            <a href="avtopoliv.html">Перейти к автополиву</a>
+          </article>
+
+          <article class="service-card home-router-card">
+            <span class="router-badge">Комфорт дома</span>
+            <h3>Нужно отопление для дома</h3>
+            <p>Когда нужно смонтировать новую систему, переделать существующую схему или увязать отопление с общей инженерией дома.</p>
+            <ul class="service-mini-list">
+              <li>Монтаж</li>
+              <li>Модернизация</li>
+              <li>Подбор оборудования</li>
+            </ul>
+            <a href="otoplenie.html">Перейти к отоплению</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container two-col home-value-grid">
+        <div>
+          <span class="eyebrow">Почему так удобнее клиенту</span>
+          <h2>На главной можно быстро понять свой следующий шаг</h2>
+          <p>Вместо перегруженного лендинга или сухого каталога здесь сразу видно, куда идти дальше: новая скважина, обустройство, качество воды, насосы, автополив или отопление.</p>
+          <ul class="check-list dark-text">
+            <li>Понятно, с какой страницы начать именно вам</li>
+            <li>По каждой услуге можно быстро перейти в отдельный разбор</li>
+            <li>Одна заявка подходит для всех направлений</li>
+            <li>Легче обсудить задачу, даже если вы ещё не знаете точное решение</li>
+          </ul>
+        </div>
+
+        <div class="cards-grid home-value-cards">
+          <article class="feature-card">
+            <h3>Один подрядчик для смежных задач</h3>
+            <p>Не нужно разбираться отдельно со скважиной, насосом, водой и дальнейшими инженерными решениями.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Без лишнего блуждания по сайту</h3>
+            <p>Можно сразу перейти в нужное направление или оставить заявку, если требуется помощь с выбором.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Понятные услуги вместо абстрактных обещаний</h3>
+            <p>Каждое направление вынесено в отдельную страницу с собственной логикой, оффером и следующими шагами.</p>
+          </article>
+          <article class="feature-card">
+            <h3>Удобно и для первого контакта, и для сравнения</h3>
+            <p>Если вы только начинаете разбираться — сайт помогает сориентироваться. Если уже сравниваете решения — помогает перейти глубже.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-alt" id="calc">
+      <div class="container two-col home-calc-grid">
+        <div>
+          <span class="eyebrow">Быстрый ориентир</span>
+          <h2>Предварительный расчёт скважины для первого разговора</h2>
+          <p>Это не фиктивная «точная цена за 30 секунд», а простой ориентир, чтобы человек лучше понял порядок бюджета до консультации.</p>
+          <div class="info-panel">
+            <h3>Что считает калькулятор</h3>
+            <p>Глубину, формат услуги и базовый тип обустройства. Такой блок уместен именно на высоко-неопределённой услуге, где человеку нужен стартовый ориентир, а не окончательная смета.</p>
+          </div>
+        </div>
+
+        <div class="lead-card">
+          <h2>Рассчитать стоимость</h2>
+          <form class="js-calc-form">
+            <label><span>Населённый пункт</span><input name="location" type="text" placeholder="Казань / Осиново / Куюки" /></label>
+            <label><span>Глубина, м</span><input name="depth" type="number" min="10" step="1" placeholder="Например, 45" required /></label>
+            <label><span>Тип услуги</span><select name="service"><option>Только бурение</option><option>Под ключ</option></select></label>
+            <label><span>Тип обустройства</span><select name="setup"><option>Без обустройства</option><option>С адаптером</option><option>С кессоном</option></select></label>
+            <button class="btn btn-primary" type="submit">Посчитать ориентир</button>
+          </form>
+          <div class="calc-result" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head home-centered-head">
+          <span class="eyebrow">Как обычно начинается работа</span>
+          <h2>Как мы обычно ведём клиента от первого запроса к понятному решению</h2>
+          <p>Даже если вы ещё не уверены, какая услуга нужна, процесс обычно выглядит спокойно и понятно — от первого обращения до следующего шага по объекту.</p>
+        </div>
+
+        <div class="steps-grid home-roadmap-grid">
+          <article class="step-card">
+            <span>1</span>
+            <h3>Получаем задачу</h3>
+            <p>Вы описываете объект, населённый пункт и что именно хотите получить: воду в доме, полив, отопление или ремонт существующей системы.</p>
+          </article>
+          <article class="step-card">
+            <span>2</span>
+            <h3>Понимаем сценарий объекта</h3>
+            <p>Смотрим, это дача, дом постоянного проживания, участок под строительство или уже работающая система, которую нужно доработать.</p>
+          </article>
+          <article class="step-card">
+            <span>3</span>
+            <h3>Определяем правильное направление</h3>
+            <p>После этого уже становится понятно, нужен ли отдельный этап бурения, решение под ключ, водоподготовка, насосы, автополив или отопление.</p>
+          </article>
+          <article class="step-card">
+            <span>4</span>
+            <h3>Даём ориентир по работам и бюджету</h3>
+            <p>Объясняем, что влияет на стоимость, какие этапы можно сделать сейчас, а что разумно оставить следующим шагом.</p>
+          </article>
+          <article class="step-card">
+            <span>5</span>
+            <h3>Переходим к реализации без хаоса</h3>
+            <p>Так вы получаете не набор разрозненных советов, а более понятный маршрут по воде и инженерным системам именно под ваш объект.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta-section">
+      <div class="container cta-box home-cta-box">
+        <div>
+          <span class="eyebrow">Следующий шаг</span>
+          <h2>Не уверены, с какой услуги начать?</h2>
+          <p>Опишите объект и задачу — по заявке можно быстро понять, какая услуга нужна первой, какие этапы идут дальше и с чего разумнее начать именно вам.</p>
+        </div>
+        <a class="btn btn-primary" href="#lead-form">Получить консультацию</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-col footer-brand-col">
+        <div class="footer-brand">АкваСтрой</div>
+        <p>Скважины, вода и инженерные системы для частных домов, дач и участков в Казани и пригороде.</p>
+        <p class="footer-meta">Регион работы: Казань и пригород. Формат: консультация, подбор решения и маршрутизация по нужной услуге.</p>
+      </div>
+      <div class="footer-col">
+        <h3>Услуги</h3>
+        <ul>
+          <li><a href="burenie-skvazhin.html">Бурение скважин</a></li>
+          <li><a href="skvazhina-pod-klyuch.html">Скважина под ключ</a></li>
+          <li><a href="obustroystvo-skvazhin.html">Обустройство скважины</a></li>
+          <li><a href="vodopodgotovka.html">Водоподготовка</a></li>
+          <li><a href="nasosnoe-oborudovanie.html">Насосное оборудование</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Информация</h3>
+        <ul>
+          <li><a href="contacts.html">Контакты</a></li>
+          <li><a href="o-kompanii.html">О компании</a></li>
+          <li><a href="stoimost-bureniya.html">Стоимость бурения</a></li>
+          <li><a href="privacy-policy.html">Политика конфиденциальности</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h3>Связь</h3>
+        <p><a class="phone-link footer-phone" href="tel:+78432583938">+7 (843) 258-39-38</a></p>
+        <p><strong>Сервисный центр:</strong> Казань, ул. Габдуллы Тукая, 115, корп. 1</p>
+        <p><a href="https://yandex.ru/profile/1231507444?lang=ru" target="_blank" rel="noopener">Рейтинг 4,8 · 115 оценок в Яндексе</a> · <a href="https://аквастрой-казань.рф" target="_blank" rel="noopener">аквастрой-казань.рф</a></p>
+        <p>Заявки с сайта подходят для первичной консультации, ориентиров по работам и маршрутизации по нужной услуге.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="./app.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      const form = document.querySelector('.js-calc-form');
+      const result = document.querySelector('.calc-result');
+      if (!form || !result) return;
+      form.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = new FormData(form);
+        const depth = Number(data.get('depth') || 0);
+        const service = data.get('service');
+        const setup = data.get('setup');
+        let total = depth * 2500;
+        if (service === 'Под ключ') total += 120000;
+        if (setup === 'С адаптером') total += 35000;
+        if (setup === 'С кессоном') total += 70000;
+        const min = Math.round(total * 0.9 / 1000) * 1000;
+        const max = Math.round(total * 1.15 / 1000) * 1000;
+        result.hidden = false;
+        result.innerHTML = `<strong>Предварительная оценка:</strong> ${min.toLocaleString('ru-RU')}–${max.toLocaleString('ru-RU')} ₽<br><span>Это не точная смета, а ориентир для первичного разговора.</span>`;
+      });
+    });
+  </script>
+</body>
+</html>

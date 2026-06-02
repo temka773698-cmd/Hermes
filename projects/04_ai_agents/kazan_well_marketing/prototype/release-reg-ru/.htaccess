@@ -1,0 +1,4 @@
+# Включаем HTTPS без подмены пути; на REG.RU ориентируемся на SERVER_PORT, чтобы не зациклить HTTPS за прокси
+RewriteEngine On
+RewriteCond %{SERVER_PORT} !^443$
+RewriteRule .* https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]

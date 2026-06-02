@@ -1,0 +1,4 @@
+# Включаем HTTPS, не подменяя хост в адресной строке браузера
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
