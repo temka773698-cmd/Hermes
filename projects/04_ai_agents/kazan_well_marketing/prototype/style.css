@@ -564,7 +564,7 @@ textarea {
 .service-hero {
   position: relative;
   overflow: hidden;
-  padding: 76px 0 52px;
+  padding: 42px 0 44px;
   border-bottom: 1px solid rgba(180, 214, 255, 0.08);
   box-shadow: inset 0 -36px 60px rgba(4, 11, 22, 0.18);
   background:
@@ -602,6 +602,37 @@ textarea {
 .service-hero .container {
   position: relative;
   z-index: 1;
+}
+
+.service-hero .eyebrow {
+  margin-bottom: 10px;
+}
+
+.service-hero h1 {
+  margin-bottom: 10px;
+  font-size: clamp(28px, 3.6vw, 46px);
+  max-width: 680px;
+}
+
+.service-hero .hero-copy-premium {
+  padding: 22px 24px 22px;
+}
+
+.service-hero .hero-actions {
+  margin: 16px 0 12px;
+}
+
+.compact-hero h1 {
+  font-size: clamp(26px, 3.15vw, 40px);
+  max-width: 760px;
+}
+
+.compact-hero .hero-copy-premium {
+  padding: 20px 22px 20px;
+}
+
+.compact-hero .hero-actions {
+  margin: 16px 0 10px;
 }
 
 .home-hero {
@@ -732,6 +763,17 @@ textarea {
   padding: 18px;
 }
 
+.service-quick-card {
+  width: 100%;
+  align-self: stretch;
+}
+
+.service-quick-card .mini-card-title {
+  color: #f4f7ff;
+  margin-bottom: 10px;
+  line-height: 1.35;
+}
+
 .intent-chip-list {
   display: flex;
   flex-wrap: wrap;
@@ -746,19 +788,28 @@ textarea {
   margin-top: 12px;
 }
 
+.intent-chip-list-compact .intent-chip {
+  width: 100%;
+  min-width: 0;
+}
+
 .intent-chip {
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  align-self: stretch;
   min-height: 38px;
-  padding: 0 14px;
+  padding: 8px 14px;
   border-radius: 999px;
-  text-decoration: none;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
   font-size: 14px;
   font-weight: 700;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.12);
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
   transition: transform 0.18s ease, background 0.18s ease, border-color 0.18s ease;
 }
 
@@ -1492,6 +1543,24 @@ textarea {
 }
 
 @media (max-width: 820px) {
+  .service-hero-grid,
+  .service-hero-side {
+    grid-template-columns: 1fr;
+  }
+
+  .service-hero .hero-actions,
+  .compact-hero .hero-actions {
+    margin-top: 10px;
+  }
+
+  .service-hero-grid {
+    gap: 16px;
+  }
+
+  .service-hero .hero-copy-premium {
+    padding: 20px 18px;
+  }
+
   .service-proof-row,
   .band-grid,
   .scenario-grid,
@@ -1520,8 +1589,8 @@ textarea {
   flex-wrap: wrap;
   gap: 10px;
   align-items: center;
-  min-height: 48px;
-  font-size: 14px;
+  min-height: 36px;
+  font-size: 13px;
   color: rgba(205, 222, 247, 0.72);
 }
 
@@ -1549,7 +1618,7 @@ textarea {
 
 .footer-col h3 {
   margin: 0 0 14px;
-  font-size: 15px;
+  font-size: 16px;
   color: #f4f7ff;
 }
 
@@ -1557,9 +1626,9 @@ textarea {
 .footer-col li,
 .footer-col a,
 .footer-meta {
-  font-size: 14px;
-  line-height: 1.65;
-  color: rgba(211, 223, 242, 0.76);
+  font-size: 15px;
+  line-height: 1.72;
+  color: rgba(231, 239, 255, 0.9);
 }
 
 .footer-col ul {
@@ -1572,6 +1641,8 @@ textarea {
 
 .footer-col a {
   text-decoration: none;
+  display: inline-block;
+  text-wrap: pretty;
 }
 
 .footer-col a:hover {
@@ -1601,15 +1672,42 @@ textarea {
 }
 
 .info-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 136px;
+  gap: 0;
   padding: 22px;
   border-radius: 22px;
-  background: rgba(14, 28, 49, 0.7);
-  border: 1px solid rgba(130, 164, 214, 0.14);
+  background: linear-gradient(180deg, rgba(14, 28, 49, 0.94) 0%, rgba(16, 33, 58, 0.88) 100%);
+  border: 1px solid rgba(157, 190, 236, 0.22);
   box-shadow: 0 18px 40px rgba(4, 9, 18, 0.28);
 }
 
 .info-card h3 {
-  margin-top: 0;
+  margin: 0 0 12px;
+  color: #f4f7ff;
+  line-height: 1.3;
+}
+
+.info-card p,
+.info-card li {
+  margin: 0;
+  color: rgba(244, 247, 255, 0.88);
+  line-height: 1.65;
+}
+
+.info-card a {
+  color: #bfe0ff;
+  font-weight: 700;
+  text-decoration: none;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 2px;
+  overflow-wrap: anywhere;
+}
+
+.info-card a:hover {
+  color: #ffffff;
 }
 
 .two-col-grid,
@@ -1646,9 +1744,29 @@ textarea {
 }
 
 @media (max-width: 720px) {
+  .breadcrumbs .container {
+    min-height: 32px;
+    gap: 6px;
+    font-size: 12px;
+  }
+
+  .info-card {
+    min-height: 0;
+    padding: 20px 18px;
+  }
+
+  .footer-col p,
+  .footer-col li,
+  .footer-col a,
+  .footer-meta {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
   .footer-grid,
   .three-col-grid,
-  .two-col-grid {
+  .two-col-grid,
+  .footer-bottom {
     grid-template-columns: 1fr;
   }
 
