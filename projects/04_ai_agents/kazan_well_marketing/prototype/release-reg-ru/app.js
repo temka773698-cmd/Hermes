@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   const toggle = document.querySelector('.menu-toggle');
   const nav = document.querySelector('.nav');
+  const PREFERRED_HOST = 'аквастрой-казань.рф';
+  const PREFERRED_HOST_PUNYCODE = 'xn----7sbabai2bnge0bfznp3o.xn--p1ai';
 
   if (toggle && nav) {
     toggle.addEventListener('click', () => nav.classList.toggle('open'));
@@ -15,6 +17,17 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     return ['/api/lead.php', '/api/lead'];
+  };
+
+  const normalizedLeadSource = () => {
+    const url = new URL(window.location.href);
+
+    if (url.hostname === PREFERRED_HOST_PUNYCODE) {
+      url.hostname = PREFERRED_HOST;
+      return url.toString();
+    }
+
+    return window.location.href;
   };
 
   const tryLeadSubmit = async (payload, endpoints) => {
@@ -70,7 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
         need: data.get('need') || '',
         comment: data.get('comment') || '',
         page: window.location.pathname,
-        source: window.location.href,
+        source: normalizedLeadSource(),
       };
       const endpoints = form.dataset.leadEndpoint
         ? [form.dataset.leadEndpoint]
@@ -86,20 +99,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (out) {
           out.hidden = false;
-          const parts = [result.message || 'Заявка обработана.'];
-          if (result.lead_id) {
-            parts.push(`ID заявки: ${result.lead_id}`);
-          }
-          if (result.log_path) {
-            parts.push(`Резервный лог: ${result.log_path}`);
-          }
-          if (result.telegram_status === 'preview') {
-            parts.push('Telegram не настроен, поэтому заявка осталась в резервном логе и показан предпросмотр.');
-          }
-          if (result.preview) {
-            parts.push('', result.preview);
-          }
-          out.textContent = parts.join('\n');
+          out.textContent = result.telegram_status === 'preview'
+            ? 'Спасибо! Заявка принята. Менеджер свяжется с вами. Если Telegram временно недоступен, заявка всё равно сохранена.'
+            : 'Спасибо! Заявка отправлена. Менеджер скоро свяжется с вами.';
         }
 
         form.reset();

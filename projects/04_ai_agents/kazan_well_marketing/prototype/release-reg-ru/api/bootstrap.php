@@ -69,9 +69,23 @@ function lead_clean_value($value)
     return $text !== '' ? $text : '-';
 }
 
+function lead_normalize_source_url($value)
+{
+    $text = trim((string) $value);
+    if ($text === '') {
+        return $text;
+    }
+
+    $preferredHost = 'аквастрой-казань.рф';
+    $punycodeHost = 'xn----7sbabai2bnge0bfznp3o.xn--p1ai';
+
+    return str_replace('://' . $punycodeHost, '://' . $preferredHost, $text);
+}
+
 function lead_build_message($payload, $siteName)
 {
     $submittedAt = lead_clean_value(isset($payload['submitted_at']) ? $payload['submitted_at'] : '');
+    $source = lead_clean_value(lead_normalize_source_url(isset($payload['source']) ? $payload['source'] : ''));
 
     $lines = array(
         '💧 Новая заявка с сайта',
@@ -84,7 +98,7 @@ function lead_build_message($payload, $siteName)
         '',
         'Технические детали',
         'Страница: ' . lead_clean_value(isset($payload['page']) ? $payload['page'] : ''),
-        'Источник: ' . lead_clean_value(isset($payload['source']) ? $payload['source'] : ''),
+        'Источник: ' . $source,
         'Время: ' . $submittedAt,
     );
 
